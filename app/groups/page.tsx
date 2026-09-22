@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import GroupForm from "../components/GroupFrom";
+import GroupForm from "../api/components/GroupFrom";
 
 interface Group {
   id: string | number;

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import RSVPButtons from "../components/RSVPButtons";
+import RSVPButtons from "../api/components/RSVPButtons";
 
 type Session = {
   id: string;

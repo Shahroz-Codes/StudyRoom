@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import SessionForm from "../components/SessionForm";
+import SessionForm from "../api/components/SessionForm";
 
 type Session = {
   id: string | number;

@@ -185,7 +185,7 @@ npm install
 Create `.env.local` or update `.env`:
 
 ```env
-DATABASE_URL="postgresql://postgres:password@localhost:5432/studyroom"
+DATABASE_URL=""
 AUTH_SECRET="replace-with-a-long-random-secret"
 ```
 

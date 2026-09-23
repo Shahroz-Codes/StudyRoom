@@ -1,43 +1,51 @@
 "use client";
 import { useState } from "react";
 
-export default function RSVPButtons({ sessionId }: { sessionId: string }) {
+export default function RSVPButtons({ sessionId, currentStatus, onUpdated }: { sessionId: string; currentStatus?: string | null; onUpdated: () => void }) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleRSVP(status: "GOING" | "NOT_GOING" | "MAYBE") {
     setLoading(true);
-    await fetch("/api/rsvp", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sessionId, status }),
-    });
-    setLoading(false);
-    window.location.reload(); // refresh page to show updated RSVP
+    setError("");
+    try {
+      const response = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, status }),
+      });
+      if (!response.ok) { const data = await response.json(); setError(data.error ?? "Could not save RSVP."); }
+      else onUpdated();
+    } catch {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <div className="flex gap-2 mt-2">
+    <div><div className="flex flex-wrap gap-2">
       <button
         disabled={loading}
         onClick={() => handleRSVP("GOING")}
-        className="bg-green-600 text-white px-3 py-1 rounded"
+        className={`rounded-full px-3 py-1.5 text-sm font-bold ${currentStatus === "GOING" ? "bg-[#32624c] text-white" : "border border-[#dfe5df] text-[#32624c]"}`}
       >
         Going
       </button>
       <button
         disabled={loading}
         onClick={() => handleRSVP("NOT_GOING")}
-        className="bg-gray-600 text-white px-3 py-1 rounded"
+        className={`rounded-full px-3 py-1.5 text-sm font-bold ${currentStatus === "NOT_GOING" ? "bg-[#17211f] text-white" : "border border-[#dfe5df] text-[#68736f]"}`}
       >
         Not Going
       </button>
       <button
         disabled={loading}
         onClick={() => handleRSVP("MAYBE")}
-        className="bg-yellow-600 text-white px-3 py-1 rounded"
+        className={`rounded-full px-3 py-1.5 text-sm font-bold ${currentStatus === "MAYBE" ? "bg-[#c58a28] text-white" : "border border-[#dfe5df] text-[#c58a28]"}`}
       >
         Maybe
       </button>
-    </div>
+    </div>{error && <p className="mt-2 text-xs text-red-600">{error}</p>}</div>
   );
 }

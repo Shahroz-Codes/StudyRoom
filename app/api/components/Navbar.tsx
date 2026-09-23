@@ -11,7 +11,10 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-5">
         <Link href="/" className="text-xl font-black tracking-tight text-[#e35d3f]">StudyRoom<span className="text-[#17211f]">.</span></Link>
       <div className="flex items-center gap-4 text-sm font-semibold text-[#68736f]">
+<<<<<<< HEAD
         <Link href="/about" className="hidden hover:text-[#e35d3f] sm:inline">About</Link>
+=======
+>>>>>>> 6cc5c7ea84c0a521705b7e4526707a6f7d097d40
         {!session ? (
           <>
             <Link href="/login" className="hover:text-[#e35d3f]">Login</Link>

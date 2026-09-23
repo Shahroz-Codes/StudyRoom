@@ -36,6 +36,24 @@ The public About page at `/about` provides a visual technical overview of the ar
 
 ## Technology Stack
 
+<p align="center">
+    <img src="https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js 16" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=20232A" alt="React 19" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 4" />
+</p>
+<p align="center">
+    <img src="https://img.shields.io/badge/Auth.js-v5-000000?style=for-the-badge" alt="Auth.js v5" />
+    <img src="https://img.shields.io/badge/Prisma-5-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma 5" />
+    <img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+    <img src="https://img.shields.io/badge/Zod-4-3E67B1?style=for-the-badge&logo=zod&logoColor=white" alt="Zod" />
+</p>
+<p align="center">
+    <img src="https://img.shields.io/badge/Node.js-20+-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js 20 or newer" />
+    <img src="https://img.shields.io/badge/ESLint-9-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint 9" />
+    <img src="https://img.shields.io/badge/npm-package_manager-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm" />
+</p>
+
 | Layer | Technology | Purpose |
 | --- | --- | --- |
 | Framework | Next.js 16 | App Router, layouts, Route Handlers, and Proxy |
